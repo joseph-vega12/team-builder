@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import Form from "./Form";
 
 const membersList = [
-  {member: "Joseph"},
-  {member: "Hanes"},
-  {member: "Audrey"}
+  {member: "Joseph", nickname: "papacanoosh"},
+  {member: "Hanes", nickname: "chango"},
+  {member: "Audrey", nickname: "Aud"}
 ];
 
 const initialFormValues = {
   member: "",
+  nickname: "",
 };
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
   const submitForm = () => {
     let newMember = {
       member: formValues.member,
+      nickname: formValues.nickname,
     };
     setMembers([...members, newMember])
     setFormValues(initialFormValues);
@@ -41,7 +43,7 @@ export default function App() {
       {members.map((item, idx) => {
         return (
           <div key={idx}>
-            {item.member}
+          {item.member}'s nickname is {item.nickname}
           </div>
         )
       })}

@@ -26,9 +26,12 @@ export default function FriendForm(props) {
           />
         </label>
         <label>
-            Login:
+            Nickname:
             <input 
             type="text"
+            name="nickname"
+            onChange={onChange}
+            value={values.nickname}
             />
           </label>
         <div>
